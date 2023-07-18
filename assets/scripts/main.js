@@ -14,7 +14,7 @@ window.onload = () => {
         hamburger.innerHTML = `<i id="navigationdrawer" class="bi bi-list"></i>`;
     } else {
         hamburger.style.display = 'block';
-        if(isSlidingMenuOpen) {
+        if (isSlidingMenuOpen) {
             slidingMenu.style.transform = 'translate(-99%, 0px)';
             background.style.opacity = 0.7;
             background.style.display = 'block;'
