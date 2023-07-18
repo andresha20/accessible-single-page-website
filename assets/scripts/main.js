@@ -3,6 +3,7 @@ let hamburger = document.getElementById('navigationdrawer');
 let slidingMenu = document.getElementById('slidingmenu');
 let background = document.getElementById('background');
 let isSlidingMenuOpen = false;
+let timer;
 
 window.onload = () => {
     width = window.innerWidth;
@@ -15,12 +16,13 @@ window.onload = () => {
         hamburger.ariaExpanded = 'false';
         hamburger.ariaLabel = 'Open the menu';
         isSlidingMenuOpen = false;
-        setTimeout(() => {
+        timer = setTimeout(() => {
             slidingMenu.style.display = 'none';
         }, 550);
     } else {
         hamburger.style.display = 'block';
         if (isSlidingMenuOpen) {
+            clearTimeout(timer);
             slidingMenu.style.display = 'block';
             slidingMenu.style.transform = 'translate(-99%, 0px)';
             background.style.opacity = 0.7;
@@ -57,6 +59,7 @@ const handleClicks = (e) => {
     switch (clickedElementId) {
         case 'navigationdrawer':
             if (!isSlidingMenuOpen) {
+                clearTimeout(timer);
                 slidingMenu.style.display = 'block';
                 slidingMenu.style.transform = 'translate(-99%, 0px)';
                 background.style.opacity = 0.7;
@@ -71,7 +74,7 @@ const handleClicks = (e) => {
                 hamburger.ariaLabel = 'Open the menu';
                 hamburger.innerHTML = `<i id="navigationdrawer" class="bi bi-list"></i>`;
                 isSlidingMenuOpen = false;
-                setTimeout(() => {
+                timer = setTimeout(() => {
                     slidingMenu.style.display = 'none';
                 }, 550);
             }
