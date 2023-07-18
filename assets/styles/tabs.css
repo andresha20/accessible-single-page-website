@@ -1,0 +1,18 @@
+.tab {
+    background-color: white;
+    opacity: 40%;
+    margin-right: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.tabs-content {
+    background-color: white;
+    padding: 1rem;
+}
+
+.active-tab {
+    opacity: 1;
+    font-weight: bold;
+    color: #3B82F6;
+}

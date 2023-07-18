@@ -1,0 +1,194 @@
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    user-select: none;
+}
+
+.menu-items > li, .menu-items > a {
+    display: inline-block;
+}
+
+.menu-items a {
+    display: block;
+    text-decoration: none;
+    transition: background-color .22s ease, color .22s ease;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #3b82f6;
+}
+
+.menu-items li {
+    position: relative;
+}
+
+.menu-items a:hover {
+    background-color: #3B82F6;
+    color: white;
+}
+
+.menu-items li:hover > .submenu {
+    display: block;
+    animation: slideup .3s ease;
+}
+
+.mobile-menu-items a {
+    display: block;
+    text-decoration: none;
+    transition: background-color .22s ease, color .22s ease;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #3b82f6;
+}
+
+.mobile-menu-items a:hover {
+    background-color: #3B82F6;
+    color: white;
+}
+
+.mobile-menu-items li:hover > .mobile-submenu {
+    display: block;
+    animation: slideup .3s ease;
+}
+
+.mobile-submenu {
+    padding-left: 1.5rem;
+    background-color: white;
+    list-style: none;
+    left: 0;
+    display: none;
+}
+
+.mobile-submenu li:hover > .mobile-deepmenu {
+    display: block;
+    animation: slideleft .3s ease;
+}
+
+.mobile-submenu a:hover {
+    background-color: #285fb7;
+}
+
+.submenu {
+    position: absolute;
+    background-color: white;
+    list-style: none;
+    left: 0;
+    width: 140px;
+    display: none;
+}
+
+.submenu li:hover > .deepmenu {
+    display: block;
+    animation: slideleft .3s ease;
+}
+
+.submenu a:hover {
+    background-color: #285fb7;
+}
+
+.mobile-deepmenu {
+    padding-left: 3rem;
+    background-color: white;
+    display: none;
+}
+
+.mobile-deepmenu a:hover {
+    background-color: #183b74;
+}
+
+.deepmenu {
+    top: 0;
+    position: absolute;
+    left: 100%;
+    width: 130px;
+    background-color: white;
+    display: none;
+}
+
+.deepmenu a:hover {
+    background-color: #183b74;
+}
+
+.navigationdrawer {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    border: none;
+    color: white;
+    background-color: #93C5FD;
+    border-radius: 4px;
+    opacity: 1;
+    z-index: 20;
+    transition: 0.3s ease-in-out;
+}
+
+.slidingmenu {
+    position: fixed;
+    top: 102px;
+    right: -60%;
+    padding: 1rem;
+    width: 60%;
+    height: 100vh;
+    background-color: white;
+    z-index: 10;
+    transition: 0.5s ease-out;
+}
+
+.background-shadow {
+    background-color: black;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    transition: 0.7s ease-out;
+}
+
+.navigationdrawer:hover {
+    color: #3B82F6;
+    opacity: 0.8;
+}
+
+.active-menu-item {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+@keyframes slideup {
+    0% {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes slideleft {
+    0% {
+        opacity: 0;
+        transform: translateX(18px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .menu-container {
+        justify-content: space-between;
+    }
+    .menu-items {
+        display: none;
+    }
+}
