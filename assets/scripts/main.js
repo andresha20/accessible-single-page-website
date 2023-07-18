@@ -29,13 +29,10 @@ window.onresize = () => {
         hamburger.style.display = 'block';
         background.style.display = 'block';
         slidingMenu.style.display = 'block';
-
-        console.log('test')
     } else {
         hamburger.style.display = 'none';
         slidingMenu.style.display = 'none';
         background.style.display = 'none';
-        console.log('ran')
     }
 }
 
@@ -50,7 +47,6 @@ const handleClicks = (e) => {
     let { id: clickedElementId } = e.target;
     switch (clickedElementId) {
         case 'navigationdrawer':
-            console.log(isSlidingMenuOpen)
             if (!isSlidingMenuOpen) {
                 slidingMenu.style.transform = 'translate(-99%, 0px)';
                 background.style.opacity = 0.7;
